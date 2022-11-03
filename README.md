@@ -16,7 +16,7 @@ Running the app:
 $ npm start
 ```
 
-if you get the error after istall dependencies :
+if you get the error after install dependencies :
 ERROR Cannot read properties of undefined (reading 'configurations'). TypeError: Cannot read properties of undefined (reading 'configurations')
 The issue happening for you on react native v0.68.2, you should change the file under:
 
