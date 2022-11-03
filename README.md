@@ -20,9 +20,11 @@ node_modules/@react-native-community/cli-platform-ios/build/config/index.js
 (was line 102 for me).
 
 function dependencyConfig(folder, userConfig) {
+```
 //before
 // const configurations = userConfig.configurations || [];
 
+```
 //after
     let configurations="";
     
