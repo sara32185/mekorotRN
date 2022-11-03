@@ -26,7 +26,7 @@ function dependencyConfig(folder, userConfig) {
 
 
 //after
-    let configurations="";
+    let configurations={};
   ```  
     
 this fixes the crash due to userConfig being empty (not sure if it's a bug or bad config)
