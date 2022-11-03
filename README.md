@@ -24,10 +24,10 @@ function dependencyConfig(folder, userConfig) {
 //before
 // const configurations = userConfig.configurations || [];
 
-```
+
 //after
     let configurations="";
-    
+  ```  
     
 this fixes the crash due to userConfig being empty (not sure if it's a bug or bad config)
 then run react-native run-android normally
