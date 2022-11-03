@@ -4,7 +4,7 @@
   "get": "Get",
   "set": "Set",
   "push": "Submit",
-  "none": "No selected user",
+  "none": "Loading...",
   "userAdress": "User Adress",
   "number": "Number",
   "city": "City",

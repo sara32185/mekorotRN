@@ -1,5 +1,5 @@
 import { Middleware } from 'redux'
-import { SaveUserByEmailActionCreator } from './actions'
+import { SaveUserByEmailActionCreator, INIT_USER } from './actions'
 import { State } from './reducers'
 import { API } from './api'
 
@@ -7,16 +7,13 @@ export const getUserMiddleware: Middleware<
     {},
     State
 > = storeApi => next => action => {
-    debugger
-    if (action.type === 'GET_USERS')
-        fetch('https://fakestoreapi.com/users?email=john@gmail.com').then((res) =>
+    if (action.type === 'GET_USERS') {
+        storeApi.dispatch({ type: INIT_USER })
+        return fetch(API).then((res) =>
             res.json()
         ).then((users: any) => {
-            return storeApi.dispatch(SaveUserByEmailActionCreator(users, action.payload))
-
-            //     dispatch(saveUsesActionCreator(users.find(
-            //     (usr: any) => usr.email === action.payload))
-            // )
+            storeApi.dispatch(SaveUserByEmailActionCreator(users, action.payload))
         })
+    }
     return next(action)
 }
