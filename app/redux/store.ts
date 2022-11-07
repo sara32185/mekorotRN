@@ -2,7 +2,6 @@ import { configureStore } from '@reduxjs/toolkit'
 
 import { reducers } from './reducers'
 import { getUserMiddleware } from './Middlewares'
-import { GET_USERS } from './actions'
 
 const store = configureStore({
     reducer: reducers,
@@ -11,4 +10,3 @@ const store = configureStore({
 })
 
 export default store
-// store.dispatch(({ type: GET_USERS }))

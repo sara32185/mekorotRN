@@ -3,6 +3,7 @@ import { User } from './User'
 export const SAVE_USER_BY_EMAIL = 'SAVE_USER_BY_EMAIL';
 export const SAVE_USERS = 'SAVE_USERS';
 export const GET_USERS = 'GET_USERS';
+export const INIT_USER = 'INIT_USER';
 
 export interface SaveUserByEmailActionType {
     type: typeof SAVE_USER_BY_EMAIL,
@@ -30,6 +31,19 @@ export const saveUsesActionCreator = (users: User[]
     return {
         type: SAVE_USERS,
         payload: users
+    }
+}
+
+export interface InitUserActionType {
+    type: typeof INIT_USER,
+    payload: {}
+}
+
+export const initUserActionCreator = (
+): InitUserActionType => {
+    return {
+        type: INIT_USER,
+        payload: {}
     }
 }
 

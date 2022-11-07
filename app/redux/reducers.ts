@@ -2,7 +2,9 @@ import { combineReducers } from 'redux';
 import {
     SaveUsersActionType,
     SaveUserByEmailActionType,
-    SAVE_USER_BY_EMAIL
+    InitUserActionType,
+    SAVE_USER_BY_EMAIL,
+    INIT_USER
 } from './actions'
 import { User, UserState } from './User'
 
@@ -11,12 +13,15 @@ const initialState = {
     user: null
 }
 
-type UserActionsTypes = SaveUserByEmailActionType | SaveUsersActionType;
+type UserActionsTypes = SaveUserByEmailActionType | SaveUsersActionType | InitUserActionType;
 const userReducer = (
     state: UserState,
     { type, payload }: UserActionsTypes
 ) => {
     switch (type) {
+        case INIT_USER: {
+            return { ...state, user: {} }
+        }
         case SAVE_USER_BY_EMAIL: {
             let user = <User>{}
             let { users, email } = payload
