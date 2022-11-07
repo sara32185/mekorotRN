@@ -17,7 +17,7 @@ const Set: React.FC<Props> = ({
 }) => {
     const dispatch = useDispatch();
     const { t } = useTranslation();
-    const [selectedEmail, setSelectedEmail] = useState<string>(data.users[0])
+    const [selectedEmail, setSelectedEmail] = useState<string>("")
 
     const handlePushButton = () => {
         dispatch({ type: GET_USERS, payload: selectedEmail })
